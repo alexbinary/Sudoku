@@ -195,12 +195,6 @@ struct Sudoku {
         
         let possibleNumbersForCell = possibleNumbers(for: cell)
         
-        guard !possibleNumbersForCell.isEmpty else {
-            
-            print("no possible numbers for first free cell: \(cell)")
-            return .failure("no possible numbers")
-        }
-        
         for number in possibleNumbersForCell.sorted(by: { $0.rawValue < $1.rawValue }) {
             
             print("trying next possible number for first free cell: \(cell): \(number.rawValue)")
@@ -417,7 +411,7 @@ var sudokuGrid_facile1 = Sudoku([
 ])
 
 
-var sudokuGrid = sudokuGrid_facile1
+var sudokuGrid = sudokuGrid_difficile
 
 sudokuGrid.printGrid()
 
