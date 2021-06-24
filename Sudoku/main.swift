@@ -321,7 +321,6 @@ struct Sudoku {
     }
 }
 
-
 extension String: Error {
     
 }
@@ -415,4 +414,8 @@ var sudokuGrid = sudokuGrid_difficile
 
 sudokuGrid.printGrid()
 
+var startDate = Date()
+
 _ = sudokuGrid.solve()
+    
+print("\((startDate.distance(to: Date())*1000).rounded())ms")
